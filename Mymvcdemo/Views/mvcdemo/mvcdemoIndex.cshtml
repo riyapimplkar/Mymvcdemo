@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "mvcdemoIndex";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/mvcdemo.js"></script>
+
+
+<h2>RegIndex</h2>
+<input type="hidden" id="hdnid" />
+<label><b>Name</b></label>
+<input type="text" id="txtname" placeholder="Enter Name" style="width:200px" /></br></br>
+<label><b>Mobile_No</b></label>
+<input type="number" id="txtnumber" placeholder="Enter Number" style="width:200px" /></br></br>
+<label><b>Email</b></label>
+<input type="email" id="txtemail" placeholder="Enter email" style="width:200px" /></br></br>
+
+
+<label><b>Address</b></label>
+<textarea typeof="text" placeholder="Enter your Address" style="width:200px;" id="txtAdd">
+</textarea></br></br>
+
+<input type="button" value="submit" class="btn btn-success" style="width:300px" Onclick=" Savereg()" />
+
+<table id="tblregistrations" class="table table-bordered">
+
+    <thead>
+        <tr>
+            <th> Srno </th>
+            <th> Id</th>
+            <th> Name </th>
+            <th> Number </th>
+            <th> Email </th>
+            <th> Address </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+
+
+<div class="col-lg-6">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Pie Chart</h5>
+
+            <!-- Pie Chart -->
+            <canvas id="pieChart" style="max-height: 400px;"></canvas>
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    new Chart(document.querySelector('#pieChart'), {
+                        type: 'pie',
+                        data: {
+                            labels: [
+                                'Red',
+                                'Blue',
+                                'Yellow'
+                            ],
+                            datasets: [{
+                                label: 'My First Dataset',
+                                data: [300, 50, 100],
+                                backgroundColor: [
+                                    'rgb(255, 99, 132)',
+                                    'rgb(54, 162, 235)',
+                                    'rgb(255, 205, 86)'
+                                ],
+                                hoverOffset: 4
+                            }]
+                        }
+                    });
+                });
+            </script>
+            <!-- End Pie CHart -->
+
+        </div>
+    </div>
+</div>
